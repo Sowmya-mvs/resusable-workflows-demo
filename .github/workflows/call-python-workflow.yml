@@ -1,0 +1,14 @@
+name: Call Python Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable-python-workflow.yml
+    with:
+      python-version: '3.10'
+
+#You can replace ./.github/workflows/reusable-python-workflow.yml with a reference to a workflow in another repo using below line: 
+      #uses: user/repo-name/.github/workflows/reusable-python-workflow.yml@main
