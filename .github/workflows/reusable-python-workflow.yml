@@ -29,5 +29,16 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
+        id: run-tests
         run: |
           pytest
+
+      # Step to handle success scenario
+      - name: Echo success
+        if: ${{ success() }}
+        run: echo "All tests passed successfully!"
+
+      # Step to handle failure scenario
+      - name: Echo failure
+        if: ${{ failure() }}
+        run: echo "Some tests failed. Please check the logs for details."
