@@ -9,6 +9,7 @@ on:
     secrets:
       token:
         required: false
+  workflow_dispatch:
 
 jobs:
   test:
